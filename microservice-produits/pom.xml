@@ -6,7 +6,12 @@
 	<groupId>com.mproduits</groupId>
 	<artifactId>mproduits</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>implementation</module>
+		<module>application</module>
+		<module>acceptance</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>mproduits</name>
 	<description>Microservice de gestion des produits</description>
