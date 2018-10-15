@@ -1,11 +1,9 @@
 package com.mproduits.web.controller;
 
-import com.mproduits.dao.ProductDao;
-import com.mproduits.model.Product;
+import com.mproduits.repository.ProductRepository;
+import com.mproduits.entity.Product;
 import com.mproduits.web.exceptions.ProductNotFoundException;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductController {
 
-    private final ProductDao productDao;
+    private final ProductRepository productDao;
 
     // Affiche la liste de tous les produits disponibles
     @GetMapping(value = "/Produits")
