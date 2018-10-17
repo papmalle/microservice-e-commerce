@@ -1,12 +1,12 @@
 package com.mproduits.facade;
 
 import com.mproduits.api.ProductsApi;
+import com.mproduits.dto.ProductRequest;
 import com.mproduits.dto.ProductResponse;
 import com.mproduits.entity.Product;
 import com.mproduits.exception.ProductNotFoundException;
 import com.mproduits.mapper.ProductMapper;
 import com.mproduits.service.ProductService;
-import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor
 public class ProductsFacade implements ProductsApi {
     private final ProductService productService;
 
@@ -29,7 +29,8 @@ public class ProductsFacade implements ProductsApi {
     }
 
     @Override
-    public List<ProductResponse> getProductsByPrice(BigDecimal price) throws ProductNotFoundException {
+    public List<ProductResponse> getProductsByPrice(ProductRequest productRequest) throws ProductNotFoundException {
+        final BigDecimal price = productRequest.getPrice();
         final List<Product> products = productService.findProductByPrice(price);
         checkProducts(products);
         return products.stream()
@@ -38,7 +39,7 @@ public class ProductsFacade implements ProductsApi {
     }
 
     @Override
-    public ProductResponse getProductById(Integer id) throws ProductNotFoundException {
+    public ProductResponse getProduct(Integer id) throws ProductNotFoundException {
         final Product oneProduct = productService.findOneProduct(id);
         return ProductMapper.convertProductsToProductsResponse(oneProduct);
     }
