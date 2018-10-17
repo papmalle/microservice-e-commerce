@@ -10,7 +10,7 @@ import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 
 import java.util.List;
-// J'ai redefini le feign contrat dans ProductFeignConfig.class pour utiliser requestLine au lieu du GetMapping sur les methodes
+// J'ai redefini le feign contrat dans ProductFeignConfig.class pour utiliser requestLine au lieu du GetMapping sur les methodes OU SOIT TU LE DEFINI DANS LA CONF DU DE L APP CLIENT APPELANT VOIR EC feign config
 @FeignClient(name= ProductApiConstant.SERVICE_NAME, configuration = ProductFeignConfig.class)
 public interface ProductsApi {
     @RequestLine("GET " + ProductApiConstant.PATH_PRODUCT)
