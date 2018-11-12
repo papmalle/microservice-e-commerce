@@ -10,8 +10,22 @@ import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 
 import java.util.List;
-// J'ai redefini le feign contrat dans ProductFeignConfig.class pour utiliser requestLine au lieu du GetMapping sur les methodes OU SOIT TU LE DEFINI DANS LA CONF DU DE L APP CLIENT APPELANT VOIR EC feign config
-@FeignClient(name= ProductApiConstant.SERVICE_NAME, configuration = ProductFeignConfig.class)
+
+// Ceci est un proxy feign qui est une interface qui fournit toutes les informations à feign pour recuperer
+// ou generer des reqêtes https (dans openclassroom Optimisation MS, ils ont definie cette interface dans le client appelant or ici on a mis dans l'api (une autre module) qui aura une dependance dans l'app client appelant
+/*
+ name= ProductApiConstant.SERVICE_NAME  se retouve dans application.yml du module APPLICATION du MS ,
+        dans application.yml de springBootTuto j'ai defini :
+        #C'est le ribbon qui est utilisé dans l'annotation @FeignClient dans Product-Api
+        products-service:
+        ribbon:
+        listOfServers: http://localhost:9001'
+*/
+
+//// J'ai redefini le feign contrat dans ProductFeignConfig.class pour utiliser requestLine au lieu du GetMapping sur les methodes OU SOIT TU LE DEFINI DANS LA CONF DU DE L APP CLIENT APPELANT VOIR EC feign config
+
+//@FeignClient(name= ProductApiConstant.SERVICE_NAME, configuration = ProductFeignConfig.class)
+@FeignClient(name = ProductApiConstant.SERVICE_NAME)
 public interface ProductsApi {
     @RequestLine("GET " + ProductApiConstant.PATH_PRODUCT)
     List<ProductResponse> getProducts() throws ProductNotFoundException;

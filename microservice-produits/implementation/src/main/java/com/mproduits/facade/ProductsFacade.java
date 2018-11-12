@@ -1,6 +1,7 @@
 package com.mproduits.facade;
 
 import com.mproduits.api.ProductsApi;
+import com.mproduits.config.MproductProperties;
 import com.mproduits.dto.ProductRequest;
 import com.mproduits.dto.ProductResponse;
 import com.mproduits.entity.Product;
@@ -18,10 +19,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductsFacade implements ProductsApi {
     private final ProductService productService;
+    private final MproductProperties mproductProperties;
 
     @Override
     public List<ProductResponse> getProducts() throws ProductNotFoundException {
         final List<Product> products = productService.findAllProduct();
+        final int limite = mproductProperties.getLimite();
         checkProducts(products);
         return products.stream()
                 .map(ProductMapper::convertProductsToProductsResponse)
@@ -45,7 +48,7 @@ public class ProductsFacade implements ProductsApi {
     }
 
     private void checkProducts(List<Product> products) {
-        if (products.isEmpty()) {
+        if (!products.isEmpty()) {
             throw new ProductNotFoundException("Products Not found");
         }
     }

@@ -1,6 +1,6 @@
 package com.mproducts;
 
-import com.mproduits.config.ProductConfiguration;
+import com.mproduits.config.ProductConfiguration;i
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
