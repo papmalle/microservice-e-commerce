@@ -1,0 +1,29 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': appareilStatus === 'allumer',
+                'list-group-item-danger':appareilStatus ==='eteint'}">
+
+  <h4 [ngStyle]="{color: getColor()}">Appareil : {{appareilName}} -- Status : {{getStatus()}}</h4>
+
+  <a [routerLink]="[id]">Details</a>&nbsp;
+  <button class="btn btn-success" [disabled]="appareilStatus=='allumer'" (click)="onSwitchOn()">allumer</button>&nbsp;
+  <button class="btn btn-danger" [disabled]="appareilStatus==='eteint'" (click)="offSwitchOn()">eteindre</button>
+</li>
+
+<!--
+
+Two way Binding :[(ngModel)] avec import {FormsModule} from '@angular/forms'; on utilise [(ngModel)] crochet pour le lier à la propriété et paranthese pour le lier à l'évenement.
+on melange les deux type de liasons donc.
+
+-->
+
+
+<!--
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': appareilStatus === 'allumer',
+                'list-group-item-danger':appareilStatus ==='eteint'}">
+
+  <h4 [ngStyle]="{color: getColor()}">Appareil : {{appareilName}} &#45;&#45; Status : {{getStatus()}}</h4>
+  <div *ngIf="appareilStatus==='eteint'"
+       style="width: 20px; height: 20px; background-color: red; margin: 17px 20px 20px;"></div>
+  <input type="text" class="form-control" [(ngModel)]="appareilName">
+</li>-->

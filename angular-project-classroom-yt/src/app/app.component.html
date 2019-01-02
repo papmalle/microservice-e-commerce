@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="auth">Authentification <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="appareils">Appareils</a>
+      </li>
+    </ul>
+  </div>
+</nav><br/>
+
+<div class="container">
+  <div class="row">
+    <!--<app-appareil-view></app-appareil-view>-->
+    <!--pour que les views choisit dans le routeur  soit utilisé -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+<!-- utilisé routerLink dit au routeur d'angular quand on click sur ce lien là le contenue de router-oulet doit être remplacer par la view associé au component declarer dans le routeur -->
+
+<!--
+   <app-appareil proprietePersonalisePermetDePasserDeDonneeDepuisComponentParentJusquauComponentEnfant="Ok"></app-appareil>
+        <app-appareil [proprietePersonalisePermetDePasserDeDonneeDepuisComponentParentJusquauComponentEnfant]="'Okk'"></app-appareil>
+        <app-appareil [proprietePersonalisePermetDePasserDeDonneeDepuisComponentParentJusquauComponentEnfant]="appareilTwo"></app-appareil>
+        <app-appareil [appareilStatus] ="'hghhggh'"></app-appareil>
+        <app-appareil></app-appareil>
+        <app-appareil [proprietePersonalisePermetDePasserDeDonneeDepuisComponentParentJusquauComponentEnfant]="appareilTwo"></app-appareil>
+
+- Interpolation : des données venant du typeScript et afficher dans le template
+
+
+- Proprieté Binding permet de creer une communication entre votre code typeScript et le template
+  et pour lier une proprieté  de typeScript à une proprieté d'objet  du dom et on utilise les crochet : [disabled]="!isAuth"
+
+- Event Binding : pour lier à un evenement du dom  avec le code du typeScript on utilise les parantheses : (click)="onAllumer()"
+
+Two way Binding :NgModel avec import {FormsModule} from '@angular/forms'; on utilise [(ngModel)] crochet pour le lier à la propriété et paranthese pour le lier à l'évenement
+
+-->

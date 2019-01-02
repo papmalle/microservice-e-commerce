@@ -1,0 +1,46 @@
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+
+import {AppComponent} from './app.component';
+import {AppareilComponent} from './appareil/appareil.component';
+import {AppareilService} from './service/appareil.service';
+import {AuthComponent} from './auth/auth.component';
+import {AppareilViewComponent} from './appareil-view/appareil-view.component';
+import {RouterModule, Routes} from '@angular/router';
+import {AuthService} from './service/auth.service';
+import {SingleAppareilComponent} from './single-appareil/single-appareil.component';
+import {FourOhFourErreurComponent} from './four-oh-four-erreur/four-oh-four-erreur.component';
+
+const appRoutes: Routes = [
+  {path: 'appareils', component: AppareilViewComponent},
+  {path: 'auth', component: AuthComponent},
+  {path: '', component: AppareilViewComponent},
+  {path: 'appareils/:id', component: SingleAppareilComponent},
+  {path: 'not-found', component: FourOhFourErreurComponent},
+  // Il est essentiel le path wilcard ** à la fin car si angular va regarder chaque route dans l'ordre'
+  {path: '**', redirectTo: '/not-found'}
+];
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AppareilComponent,
+    AuthComponent,
+    AppareilViewComponent,
+    SingleAppareilComponent,
+    FourOhFourErreurComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes) // en gros toutes les routes qu'on veut rengistrer ce trouve dans ce constante
+  ],
+  providers: [
+    AppareilService,
+    AuthService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
