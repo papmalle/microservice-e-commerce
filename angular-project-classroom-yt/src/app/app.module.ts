@@ -11,12 +11,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './service/auth.service';
 import {SingleAppareilComponent} from './single-appareil/single-appareil.component';
 import {FourOhFourErreurComponent} from './four-oh-four-erreur/four-oh-four-erreur.component';
+import {AuthGuardService} from './service/auth.guard.service';
 
 const appRoutes: Routes = [
-  {path: 'appareils', component: AppareilViewComponent},
+  {path: 'appareils', canActivate: [AuthGuardService], component: AppareilViewComponent},
   {path: 'auth', component: AuthComponent},
   {path: '', component: AppareilViewComponent},
-  {path: 'appareils/:id', component: SingleAppareilComponent},
+  {path: 'appareils/:id', canActivate: [AuthGuardService], component: SingleAppareilComponent},
   {path: 'not-found', component: FourOhFourErreurComponent},
   // Il est essentiel le path wilcard ** à la fin car si angular va regarder chaque route dans l'ordre'
   {path: '**', redirectTo: '/not-found'}
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     AppareilService,
-    AuthService
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
