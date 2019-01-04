@@ -12,6 +12,7 @@ import {AuthService} from './service/auth.service';
 import {SingleAppareilComponent} from './single-appareil/single-appareil.component';
 import {FourOhFourErreurComponent} from './four-oh-four-erreur/four-oh-four-erreur.component';
 import {AuthGuardService} from './service/auth.guard.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'appareils', canActivate: [AuthGuardService], component: AppareilViewComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes) // en gros toutes les routes qu'on veut rengistrer ce trouve dans ce constante
+    RouterModule.forRoot(appRoutes), // en gros toutes les routes qu'on veut rengistrer ce trouve dans ce constante
+    HttpClientModule
   ],
   providers: [
     AppareilService,

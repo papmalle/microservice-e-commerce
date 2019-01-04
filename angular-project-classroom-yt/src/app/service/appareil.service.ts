@@ -1,27 +1,24 @@
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
+import {Appareil} from '../appareil/appareil';
+import {map} from 'rxjs/operators';
+
+@Injectable()
 export class AppareilService {
-  private appareils = [
-    {
-      id: 1,
-      name: 'Machine à Laver',
-      status: 'allumer'
-    },
 
-    {
-      id: 2,
-      name: 'Télévision',
-      status: 'allumer'
-    },
+  private appareils:Appareil[];
 
-    {
-      id: 3,
-      name: 'Ordinateur',
-      status: 'eteint'
-    }
+  constructor(private callHttp : HttpClient) {
 
-  ];
+  }
 
-  getListAppareils() {
-    return this.appareils;
+  getListAppareils():Observable<Appareil[]> {
+    if(this.appareils) return of(this.appareils);
+
+    return this.callHttp.get<Appareil[]>("http://localhost:8080/appareils").pipe(
+      map(((value, index) => this.appareils = value))
+    );
   }
 
   getAppareilById(id: number) {

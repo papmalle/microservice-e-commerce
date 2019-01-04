@@ -29,7 +29,7 @@ export class AppareilViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appareils = this.appareilService.getListAppareils();
+    this.appareilService.getListAppareils().subscribe(value => this.appareils =  value);
   }
 
   onEteindre() {
