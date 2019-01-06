@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AppareilService} from '../service/appareil.service';
+import {Appareil} from '../appareil/appareil';
 
 @Component({
   selector: 'app-appareil-view',
@@ -29,7 +30,17 @@ export class AppareilViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appareilService.getListAppareils().subscribe(value => this.appareils =  value);
+
+    this.appareilService.getListAppareils().subscribe((value: Appareil[]) => {
+        this.appareils = value;
+      }, (error: any) => {
+        console.log('il ya eu une erreur');
+      },
+      () => {
+        console.log('Complete');
+      });
+
+    // this.appareilService.getListAppareils().subscribe(value => this.appareils = value);
   }
 
   onEteindre() {

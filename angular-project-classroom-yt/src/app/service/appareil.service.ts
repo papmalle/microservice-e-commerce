@@ -2,21 +2,22 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Appareil} from '../appareil/appareil';
-import {map} from 'rxjs/operators';
+import {map, throttleTime} from 'rxjs/operators';
 
 @Injectable()
 export class AppareilService {
 
-  private appareils:Appareil[];
+  private appareils: Appareil[];
 
-  constructor(private callHttp : HttpClient) {
+  constructor(private callHttp: HttpClient) {
 
   }
 
-  getListAppareils():Observable<Appareil[]> {
-    if(this.appareils) return of(this.appareils);
+  getListAppareils(): Observable<Appareil[]> {
+    if (this.appareils) return of(this.appareils);
 
-    return this.callHttp.get<Appareil[]>("http://localhost:8080/appareils").pipe(
+    return this.callHttp.get<Appareil[]>('http://localhost:8080/appareils').pipe(
+      // throttleTime(5000)
       map(((value, index) => this.appareils = value))
     );
   }
