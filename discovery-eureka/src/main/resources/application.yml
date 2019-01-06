@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: discovery-eureka
+
+server:
+  port: 6061
+
+eureka.client.serviceUrl.defaultZone: http://localhost:6061/eureka/
+eureka.client.register-with-eureka: false
+eureka.client.fetch-registry: false
