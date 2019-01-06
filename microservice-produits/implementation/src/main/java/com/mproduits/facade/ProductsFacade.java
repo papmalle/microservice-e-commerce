@@ -27,6 +27,7 @@ public class ProductsFacade implements ProductsApi {
         final int limite = mproductProperties.getLimite();
         checkProducts(products);
         return products.stream()
+                .limit(limite)
                 .map(ProductMapper::convertProductsToProductsResponse)
                 .collect(Collectors.toList());
     }
@@ -48,7 +49,7 @@ public class ProductsFacade implements ProductsApi {
     }
 
     private void checkProducts(List<Product> products) {
-        if (!products.isEmpty()) {
+        if (products.isEmpty()) {
             throw new ProductNotFoundException("Products Not found");
         }
     }

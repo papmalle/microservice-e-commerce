@@ -20,6 +20,9 @@ import java.util.List;
         products-service:
         ribbon:
         listOfServers: http://localhost:9001'
+
+
+        Le nom de Ribbon est egal au Nom de l'application enregistré dans Eureka
 */
 
 //// J'ai redefini le feign contrat dans ProductFeignConfig.class pour utiliser requestLine au lieu du GetMapping sur les methodes OU SOIT TU LE DEFINI DANS LA CONF DU DE L APP CLIENT APPELANT VOIR EC feign config

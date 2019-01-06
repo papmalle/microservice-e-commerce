@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: products-service
+  cloud:
+    config:
+      uri: http://localhost:6060
+
+#quand on utilise le ribbon on ne donne pas le server port en dure regarde dans MS_PRODUCT1 AVEC -Dserver.port=9001
+#server:
+#  port: 9001
+
+#eureka:
+#  client:
+#    region: default
+#  registryFetchIntervalSeconds: 5
+#  serviceUrl:
+#    defaultZone: http://localhost:6061/eureka/
+
+#Ou soit ont le met dans bootstrap.yml de l'implementation vu qu'il est utilisé dans la facade
+#config-product:
+#  limite: 48
+

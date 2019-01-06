@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: products-service
-
-#Ou soit ont le met dans application.properties de l'implementation vu qu'il est utilisé dans la facade
-config-product:
-  limite: 48
