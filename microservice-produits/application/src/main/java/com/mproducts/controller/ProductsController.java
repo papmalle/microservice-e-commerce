@@ -17,8 +17,8 @@ public class ProductsController {
     private final ProductsFacade productsFacade;
 
     @GetMapping(ProductApiConstant.PATH_PRODUCT)
-    public List<ProductResponse> getProducts() throws ProductNotFoundException {
-        return productsFacade.getProducts();
+    public List<ProductResponse> getProducts(Pageable page ) throws ProductNotFoundException {
+        return productsFacade.getProducts(page);
     }
 
     @GetMapping(ProductApiConstant.PATH_PRODUCT_BY_ID + "{" + ProductApiConstant.ID_PRODUCT + "}")

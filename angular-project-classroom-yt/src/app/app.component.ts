@@ -31,6 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    console.log("componet destroy ");
     this.countSubcription.unsubscribe();
   }
 

@@ -24,6 +24,14 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findById(id).get();
     }
 
+/*
+    public List<Product> findAllProductByLimit(int limite)
+    {
+        return productRepository.findAll(new PageRequest(1,limite));
+    }
+*/
+
+
     @Override
     public List<Product> findProductByPrice(BigDecimal price) {
         return productRepository.findProductByPrice(price);
