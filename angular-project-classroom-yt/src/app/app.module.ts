@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {AppareilComponent} from './appareil/appareil.component';
@@ -13,12 +13,15 @@ import {SingleAppareilComponent} from './single-appareil/single-appareil.compone
 import {FourOhFourErreurComponent} from './four-oh-four-erreur/four-oh-four-erreur.component';
 import {AuthGuardService} from './service/auth.guard.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { UserFormComponent } from './user-form/user-form.component';
+
 
 const appRoutes: Routes = [
   {path: 'appareils', canActivate: [AuthGuardService], component: AppareilViewComponent},
   {path: 'auth', component: AuthComponent},
   {path: '', component: AppareilViewComponent},
   {path: 'appareils/:id', canActivate: [AuthGuardService], component: SingleAppareilComponent},
+  {path: 'user', component: UserFormComponent},
   {path: 'not-found', component: FourOhFourErreurComponent},
   // Il est essentiel le path wilcard ** à la fin car si angular va regarder chaque route dans l'ordre'
   {path: '**', redirectTo: '/not-found'}
@@ -31,13 +34,15 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     SingleAppareilComponent,
-    FourOhFourErreurComponent
+    FourOhFourErreurComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes), // en gros toutes les routes qu'on veut rengistrer ce trouve dans ce constante
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     AppareilService,
