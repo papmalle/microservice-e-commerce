@@ -31,6 +31,7 @@ import java.util.List;
 @FeignClient(name = ProductApiConstant.SERVICE_NAME)
 public interface ProductsApi {
     @RequestLine("GET " + ProductApiConstant.PATH_PRODUCT)
+//    @RequestLine("GET " + ProductApiConstant.PATH_PRODUCT)
     List<ProductResponse> getProducts() throws ProductNotFoundException;
 
     @RequestLine("POST " + ProductApiConstant.PATH_PRODUCT)
