@@ -8,9 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 // Creer une classe de configuration dans les modules
-@ComponentScan({"com.mproduits","com.*"})
+//@ComponentScan({"com.mproduits","com.*"}) // il faut faire de l'auto configuration
 @EnableFeignClients("com.mproduits")
-//@EnableEurekaClient
+@EnableEurekaClient
 public class BackAngularApplication {
 
     public static void main(String[] args) {

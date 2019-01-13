@@ -27,7 +27,7 @@ public class ProductsFacade implements ProductsApi {
         final int limite = mproductProperties.getLimite();
         checkProducts(products);
         return products.stream()
-                .limit(limite) ser
+                .limit(limite)
                 .map(ProductMapper::convertProductsToProductsResponse)
                 .collect(Collectors.toList());
     }
