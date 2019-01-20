@@ -22,8 +22,8 @@ public class ProductsController {
     }
 
     @GetMapping(ProductApiConstant.PATH_PRODUCT_BY_ID + "{" + ProductApiConstant.ID_PRODUCT + "}")
-    public ProductResponse getProduct(@PathVariable() Integer id) {
-        return productsFacade.getProduct(id);
+    public ProductResponse getProduct(@PathVariable() Integer idProduct) {
+        return productsFacade.getProduct(idProduct);
     }
 
 
