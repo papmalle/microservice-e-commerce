@@ -12,7 +12,10 @@ import {AuthService} from './service/auth.service';
 import {SingleAppareilComponent} from './single-appareil/single-appareil.component';
 import {FourOhFourErreurComponent} from './four-oh-four-erreur/four-oh-four-erreur.component';
 import {AuthGuardService} from './service/auth.guard.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import {UserListComponent} from './user-list/user-list.component';
+import {UserService} from "./service/user.service";
+import {NewUserComponent} from './new-user/new-user.component';
 // import { UserFormComponent } from './user-form/user-form.component';
 
 
@@ -21,7 +24,8 @@ const appRoutes: Routes = [
   {path: 'auth', component: AuthComponent},
   {path: '', component: AppareilViewComponent},
   {path: 'appareils/:id', canActivate: [AuthGuardService], component: SingleAppareilComponent},
-  // {path: 'user', component: UserFormComponent},
+  {path: 'users', component: UserListComponent},
+  {path: 'new-user', component: NewUserComponent},
   {path: 'not-found', component: FourOhFourErreurComponent},
   // Il est essentiel le path wilcard ** à la fin car si angular va regarder chaque route dans l'ordre'
   {path: '**', redirectTo: '/not-found'}
@@ -34,7 +38,9 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     SingleAppareilComponent,
-    FourOhFourErreurComponent
+    FourOhFourErreurComponent,
+    UserListComponent,
+    NewUserComponent
     // UserFormComponent
   ],
   imports: [
@@ -47,7 +53,8 @@ const appRoutes: Routes = [
   providers: [
     AppareilService,
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

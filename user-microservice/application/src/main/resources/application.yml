@@ -1,0 +1,38 @@
+
+server:
+  port: 9008
+#Configurations H2
+spring:
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        current_session_context_class: thread
+        format_sql: true
+        jdbc.lob.non_contextual_creation: true
+
+  datasource:
+    sql-script-encoding: UTF-8
+    url: jdbc:mysql://localhost:3306/microservice_user
+#    url: jdbc:mysql://localhost:3306/microservice_user?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
+    username: papmalle
+    password: bamako
+
+
+  h2:
+    console:
+      enabled: true
+  application:
+    name: user-microservice
+
+#on peut le mettre aussi dans le module applicationn du microservice produit car ce module à une dependance du module implementation, c'est pour cela je l'ai mis à 48 (config-product.limite=4)
+config-product:
+  limite: 5
+
+
+eureka.client.region: default
+eureka.client.registryFetchIntervalSeconds: 5
+eureka.client.serviceUrl.defaultZone: http://localhost:6061/eureka/
+
