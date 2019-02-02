@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="acceptance" />
+        <module name="application" />
+        <module name="applications" />
+        <module name="backangular" />
+        <module name="config-server" />
+        <module name="discovery-eureka" />
+        <module name="implementation" />
+        <module name="implementationn" />
+        <module name="produit-api" />
+        <module name="user-microservice-api" />
+        <module name="zuul-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="acceptance" target="1.8" />
+      <module name="application" target="1.8" />
+      <module name="applications" target="1.8" />
+      <module name="backangular" target="8" />
+      <module name="config-server" target="1.8" />
+      <module name="discovery-eureka" target="1.8" />
+      <module name="implementation" target="1.8" />
+      <module name="implementationn" target="1.8" />
+      <module name="mpaiement" target="1.8" />
+      <module name="mproduits" target="1.8" />
+      <module name="produit-api" target="1.7" />
+      <module name="user-microservice" target="1.8" />
+      <module name="user-microservice-api" target="1.5" />
+      <module name="zuul-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

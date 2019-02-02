@@ -1,0 +1,9 @@
+com\example\backangular\repository\AppareilsRepository.class
+com\example\backangular\config\ConfigurationCors.class
+com\example\backangular\config\ConfigurationCors$1.class
+com\example\backangular\service\ProductServiceImpl.class
+com\example\backangular\controller\AppareilController.class
+com\example\backangular\service\ProductService.class
+com\example\backangular\BackAngularApplication.class
+com\example\backangular\service\AppareilService.class
+com\example\backangular\entity\Appareils.class

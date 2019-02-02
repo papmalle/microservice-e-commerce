@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/microservice-produits/acceptance/acceptance.iml" filepath="$PROJECT_DIR$/microservice-produits/acceptance/acceptance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-produits/application/application.iml" filepath="$PROJECT_DIR$/microservice-produits/application/application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-microservice/application/applications.iml" filepath="$PROJECT_DIR$/user-microservice/application/applications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back-angular/backangular.iml" filepath="$PROJECT_DIR$/back-angular/backangular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discovery-eureka/discovery-eureka.iml" filepath="$PROJECT_DIR$/discovery-eureka/discovery-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-produits/implementation/implementation.iml" filepath="$PROJECT_DIR$/microservice-produits/implementation/implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-microservice/implementation/implementationn.iml" filepath="$PROJECT_DIR$/user-microservice/implementation/implementationn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/microservice-e-commerce2.iml" filepath="$PROJECT_DIR$/.idea/microservice-e-commerce2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-produits/mproduits.iml" filepath="$PROJECT_DIR$/microservice-produits/mproduits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-produits-api/produit-api.iml" filepath="$PROJECT_DIR$/microservice-produits-api/produit-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-microservice/user-microservice.iml" filepath="$PROJECT_DIR$/user-microservice/user-microservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-microservice-api/user-microservice-api.iml" filepath="$PROJECT_DIR$/user-microservice-api/user-microservice-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-gateway/zuul-gateway.iml" filepath="$PROJECT_DIR$/zuul-gateway/zuul-gateway.iml" />
+    </modules>
+  </component>
+</project>

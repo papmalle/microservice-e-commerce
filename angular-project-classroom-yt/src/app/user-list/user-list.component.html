@@ -1,0 +1,22 @@
+<a routerLink="/new-user"> Nouvel Utilisateur</a>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of users">
+    <h3>{{user.firstName}} {{user.lastName}}</h3>
+    <p>{{user.email}}</p>
+    <p>{{user.password}}</p>
+
+    <p>{{user.adresseDto.name}} {{user.adresseDto.codePostal}}</p>
+
+    <p *ngFor="let account of user.accountDtos">
+      {{account.accountNumber}}
+    </p>
+
+    <p *ngIf="user.books && user.books.length >0">
+      Cette Utilisateurs à des books :
+      <span *ngFor="let book of user.books">
+        {{book.toUpperCase()}}
+      </span>
+    </p>
+  </li>
+
+</ul>
