@@ -8,11 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="acceptance" />
         <module name="application" />
+        <module name="application (1) (com.mproduits)" />
+        <module name="application (2) (com.pap)" />
         <module name="applications" />
         <module name="backangular" />
         <module name="config-server" />
         <module name="discovery-eureka" />
         <module name="implementation" />
+        <module name="implementation (1) (com.mproduits)" />
+        <module name="implementation (2) (com.pap)" />
         <module name="implementationn" />
         <module name="produit-api" />
         <module name="user-microservice-api" />
@@ -22,18 +26,35 @@
     <bytecodeTargetLevel>
       <module name="acceptance" target="1.8" />
       <module name="application" target="1.8" />
+      <module name="application (1) (com.mproduits)" target="1.8" />
+      <module name="application (2) (com.pap)" target="1.8" />
       <module name="applications" target="1.8" />
       <module name="backangular" target="8" />
       <module name="config-server" target="1.8" />
       <module name="discovery-eureka" target="1.8" />
       <module name="implementation" target="1.8" />
+      <module name="implementation (1) (com.mproduits)" target="1.8" />
+      <module name="implementation (2) (com.pap)" target="1.8" />
       <module name="implementationn" target="1.8" />
       <module name="mpaiement" target="1.8" />
       <module name="mproduits" target="1.8" />
-      <module name="produit-api" target="1.7" />
+      <module name="produit-api" target="1.6" />
       <module name="user-microservice" target="1.8" />
-      <module name="user-microservice-api" target="1.5" />
+      <module name="user-microservice-api" target="1.6" />
       <module name="zuul-gateway" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="acceptance" options="-parameters" />
+      <module name="application (1) (com.mproduits)" options="-parameters" />
+      <module name="application (2) (com.pap)" options="-parameters" />
+      <module name="backangular" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="discovery-eureka" options="-parameters" />
+      <module name="implementation (1) (com.mproduits)" options="-parameters" />
+      <module name="implementation (2) (com.pap)" options="-parameters" />
+      <module name="zuul-gateway" options="-parameters" />
+    </option>
   </component>
 </project>

@@ -5,20 +5,21 @@ server:
 spring:
   jpa:
     show-sql: true
-    hibernate.ddl-auto: update
+    hibernate.ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         current_session_context_class: thread
         format_sql: true
         jdbc.lob.non_contextual_creation: true
+#        enable_lazy_load_no_trans: true ou ajouter @transactionel https://stackoverflow.com/questions/46259878/org-hibernate-lazyinitializationexception-failed-to-lazily-initialize-a-collect
 
   datasource:
     sql-script-encoding: UTF-8
     url: jdbc:mysql://localhost:3306/microservice_user
 #    url: jdbc:mysql://localhost:3306/microservice_user?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
-    username: papmalle
-    password: bamako
+    username: root
+    password: 7153
 
 
   h2:
@@ -27,7 +28,7 @@ spring:
   application:
     name: user-microservice
 
-#on peut le mettre aussi dans le module applicationn du microservice produit car ce module à une dependance du module implementation, c'est pour cela je l'ai mis à 48 (config-product.limite=4)
+#on peut le mettre aussi dans le module applicationn du microservice produit car ce module ï¿½ une dependance du module implementation, c'est pour cela je l'ai mis ï¿½ 48 (config-product.limite=4)
 config-product:
   limite: 5
 

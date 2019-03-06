@@ -18,4 +18,9 @@ public class ConfigurationCors {
             }
         };
     }
+
+//    @Bean
+//    public DataSource dataSource(DataSourceProperties dataSourceProperties) {
+//        return dataSourceProperties.initializeDataSourceBuilder().build();
+//    }
 }
