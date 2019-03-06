@@ -1,8 +1,8 @@
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\config\ConfigurationCors.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\controller\AppareilController.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\service\AppareilService.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\entity\Appareils.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\service\ProductServiceImpl.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\BackAngularApplication.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\service\ProductService.java
-C:\Data\microservice-e-commerce2\back-angular\src\main\java\com\example\backangular\repository\AppareilsRepository.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/controller/AppareilController.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/repository/AppareilsRepository.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/entity/Appareils.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/BackAngularApplication.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/service/AppareilService.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/config/ConfigurationCors.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/service/ProductServiceImpl.java
+/home/malle/Developpement/microservice-e-commerce/back-angular/src/main/java/com/example/backangular/service/ProductService.java
